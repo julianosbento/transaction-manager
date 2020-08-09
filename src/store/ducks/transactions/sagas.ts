@@ -49,7 +49,7 @@ export function* setTransactionsAndBalance(transactions: ITransaction[]) {
       ({ date }) => date
     ).reverse();
 
-    const balance = getBalance(sortedTransactions);
+    const balance = yield call(getBalance, sortedTransactions);
 
     yield all([
       put(setBalance(balance)),
@@ -64,7 +64,7 @@ export function* transactionFailed() {
   yield put(
     showSnackbar({
       duration: 7000,
-      message: translate('transaction_failed'),
+      message: 'transaction_failed',
       visible: true,
     })
   );

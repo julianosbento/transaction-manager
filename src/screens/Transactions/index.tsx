@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import ActionButton from 'react-native-action-button';
 import SlidingUpPanel from 'rn-sliding-up-panel';
@@ -14,8 +14,9 @@ import {
 import { Constants, Colors } from '../../config';
 import { typedUseSelector } from '../../store';
 
-const ExampleScreen: React.FC = () => {
+const TransactionsScreen: React.FC = () => {
   let transactionPanelRef: any = null;
+  const [showFAB, setShowFAB] = useState(false);
 
   const { transactions } = typedUseSelector((state) => state.transactions);
 
@@ -23,25 +24,33 @@ const ExampleScreen: React.FC = () => {
     transactionPanelRef.hide();
   }, [transactions]);
 
+  const handlePanel = () => {
+    transactionPanelRef.show();
+    setShowFAB(false);
+  };
+
   return (
     <>
       <Balance />
       <TransactionsList />
       <SlidingUpPanel
+        onBottomReached={() => setShowFAB(true)}
         draggableRange={{ top: hp(60), bottom: 0 }}
         ref={(panelRef) => (transactionPanelRef = panelRef)}>
         <View style={{ alignItems: 'flex-start', flex: 1 }}>
           <TransactionForm />
         </View>
       </SlidingUpPanel>
-      <ActionButton
-        buttonColor={Colors.eletric}
-        onPress={() => transactionPanelRef.show()}
-        position={Constants.CENTER}
-      />
+      {showFAB ? (
+        <ActionButton
+          buttonColor={Colors.eletric}
+          onPress={() => handlePanel()}
+          position={Constants.CENTER}
+        />
+      ) : null}
       <Snackbar />
     </>
   );
 };
 
-export default React.memo(ExampleScreen);
+export default React.memo(TransactionsScreen);

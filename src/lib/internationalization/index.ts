@@ -28,11 +28,9 @@ const getLanguageByDevice = () =>
 const setLanguageToI18n = () => {
   const language = getLanguageByDevice();
   const translateNormalize = normalizeTranslate[language];
-  // eslint-disable-next-line no-prototype-builtins
   const iHaveThisLanguage = I18n.translations.hasOwnProperty(
     translateNormalize
   );
-  // eslint-disable-next-line no-unused-expressions
   iHaveThisLanguage
     ? (I18n.locale = translateNormalize)
     : (I18n.defaultLocale = 'pt-BR');

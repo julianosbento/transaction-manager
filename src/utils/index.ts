@@ -1,4 +1,4 @@
 import { parseFloatCurrency, secureCurrency } from './currency';
-import { getTimeTimeFormat } from './time';
+import { getTimeFormat } from './time';
 
-export { getTimeTimeFormat, parseFloatCurrency, secureCurrency };
+export { getTimeFormat, parseFloatCurrency, secureCurrency };

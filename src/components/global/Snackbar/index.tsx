@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import { typedUseSelector } from '../../../store';
 import { hideSnackbar } from '../../../store/ducks/snackbar/actions';
+import { translate } from '../../../lib';
 
 const Snackbar: React.FC = ({}) => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const Snackbar: React.FC = ({}) => {
       duration={duration}
       visible={visible}
       onDismiss={() => dispatchHideSnackbar()}>
-      {message}
+      {translate(message)}
     </SnackbarPaper>
   );
 };

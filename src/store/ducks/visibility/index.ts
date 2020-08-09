@@ -1,7 +1,7 @@
 import { Reducer } from 'redux';
 import { IVisibilityState, IVisibilityTypes } from './types';
 
-const INITIAL_STATE: IVisibilityState = {
+export const INITIAL_STATE: IVisibilityState = {
   visibility: true,
 };
 

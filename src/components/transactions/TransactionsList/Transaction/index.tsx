@@ -8,7 +8,7 @@ import { translate } from '../../../../lib';
 import dataMap from './dataMap';
 import * as S from './styles';
 import { Label } from '../../..';
-import { getTimeTimeFormat } from '../../../../utils';
+import { getTimeFormat } from '../../../../utils';
 import { typedUseSelector } from '../../../../store';
 
 interface ITransactionProps {
@@ -40,7 +40,7 @@ const Transaction: React.FC<ITransactionProps> = ({
         />
         <Label label={description} />
       </S.Container>
-      <Label label={getTimeTimeFormat(date)} />
+      <Label label={getTimeFormat(date)} />
     </S.Container>
   );
 };

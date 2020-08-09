@@ -1,3 +1,3 @@
-import ExampleScreen from './Example';
+import TransactionsScreen from './Transactions';
 
-export { ExampleScreen };
+export { TransactionsScreen };

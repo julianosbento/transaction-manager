@@ -1,8 +1,7 @@
 import { Reducer } from 'redux';
 import { ITransactionsState, ITransactionsTypes } from './types';
-import { Constants } from '../../../config';
 
-const INITIAL_STATE: ITransactionsState = {
+export const INITIAL_STATE: ITransactionsState = {
   balance: 0,
   transactions: [],
   loading: false,
@@ -17,21 +16,12 @@ const reducer: Reducer<ITransactionsState> = (
     case ITransactionsTypes.SET_BALANCE:
       return { ...state, balance: action.payload.balance };
 
-    case ITransactionsTypes.GET_TRANSACTIONS:
-      return { ...state, loading: true };
     case ITransactionsTypes.SET_TRANSACTIONS:
       return {
         ...state,
         loading: false,
         error: false,
         transactions: action.payload.transactions,
-      };
-    case ITransactionsTypes.SET_TRANSACTIONS_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        error: false,
-        transactions: INITIAL_STATE.transactions,
       };
 
     case ITransactionsTypes.TRANSACTIONS_CLEAN:

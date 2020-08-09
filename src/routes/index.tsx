@@ -2,8 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import ExampleScreen from '../screens/Example';
-import { Logo, Snackbar } from '../components';
+import TransactionsScreen from '../screens/Transactions';
 
 const Stack = createStackNavigator();
 
@@ -13,8 +12,8 @@ const Routes: React.FC = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name='Example'
-            component={ExampleScreen}
+            name='Transactions'
+            component={TransactionsScreen}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

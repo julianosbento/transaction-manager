@@ -1,7 +1,7 @@
 import { Reducer } from 'redux';
 import { ISnackbarState, ISnackbarTypes } from './types';
 
-const INITIAL_STATE: ISnackbarState = {
+export const INITIAL_STATE: ISnackbarState = {
   snackbar: {
     duration: 7000,
     message: '',
