@@ -1,30 +1,38 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { Text } from 'react-native';
+import { View } from 'react-native';
+import ActionButton from 'react-native-action-button';
+import SlidingUpPanel from 'rn-sliding-up-panel';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-import { I18n, translate } from '../../lib';
+import { TransactionsList, TransactionForm } from '../../components';
+
+import { Constants } from '../../config';
 import { typedUseSelector } from '../../store';
-import { getExample } from '../../store/ducks/example/actions';
-
-import * as S from './styles';
 
 const ExampleScreen: React.FC = () => {
-  const {
-    example: { example },
-  } = typedUseSelector((state) => state);
+  let transactionPanelRef: any = null;
 
-  const dispatch = useDispatch();
-  const dispatchGetExample = () => dispatch(getExample());
+  const { transactions } = typedUseSelector((state) => state.transactions);
 
   useEffect(() => {
-    dispatchGetExample();
-  }, []);
+    transactionPanelRef.hide();
+  }, [transactions]);
 
   return (
-    <S.Container>
-      <Text>{translate('example')}</Text>
-      <Text>{example}</Text>
-    </S.Container>
+    <>
+      <TransactionsList />
+      <SlidingUpPanel
+        draggableRange={{ top: hp(60), bottom: 0 }}
+        ref={(panelRef) => (transactionPanelRef = panelRef)}>
+        <View style={{ alignItems: 'flex-start', flex: 1 }}>
+          <TransactionForm />
+        </View>
+      </SlidingUpPanel>
+      <ActionButton
+        onPress={() => transactionPanelRef.show()}
+        position={Constants.CENTER}
+      />
+    </>
   );
 };
 

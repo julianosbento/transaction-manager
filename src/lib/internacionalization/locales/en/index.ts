@@ -1,3 +1,5 @@
+import common from './common';
 import example from './example';
+import transactions from './transactions';
 
-export default { ...example };
+export default { ...common, ...example, ...transactions };

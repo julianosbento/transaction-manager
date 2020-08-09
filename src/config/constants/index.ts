@@ -1,8 +1,10 @@
-import { http, style, words } from './terms';
+import { common, http, style, time, words } from './terms';
 
 const Constants = {
+  ...common,
   ...http,
   ...style,
+  ...time,
   ...words,
 };
 

@@ -3,15 +3,16 @@ import { useSelector, TypedUseSelectorHook } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import { persistReducer, persistStore } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
-import Reactotron from 'reactotron-react-native';
 
 import rootReducer from './ducks/rootReducer';
 import rootSaga from './ducks/rootSaga';
 
-import { ExampleState } from './ducks/example/types';
+import { IExampleState } from './ducks/example/types';
+import { ITransactionsState } from './ducks/transactions/types';
 
 export interface ApplicationState {
-  example: ExampleState;
+  example: IExampleState;
+  transactions: ITransactionsState;
 }
 
 const persistConfig = {

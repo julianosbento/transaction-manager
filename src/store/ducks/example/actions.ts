@@ -1,11 +1,12 @@
 import { action } from 'typesafe-actions';
-import { ExampleTypes } from './types';
+import { IExampleTypes } from './types';
 
-export const getExample = () => action(ExampleTypes.GET_EXAMPLE);
+export const getExample = () => action(IExampleTypes.GET_EXAMPLE);
 
-export const getExampleFailure = () => action(ExampleTypes.GET_EXAMPLE_FAILURE);
+export const getExampleFailure = () =>
+  action(IExampleTypes.GET_EXAMPLE_FAILURE);
 
 export const setExample = (example: string) =>
-  action(ExampleTypes.SET_EXAMPLE, { example });
+  action(IExampleTypes.SET_EXAMPLE, { example });
 
-export const exampleClean = () => action(ExampleTypes.EXAMPLE_CLEAN);
+export const exampleClean = () => action(IExampleTypes.EXAMPLE_CLEAN);

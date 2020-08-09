@@ -1,36 +1,36 @@
 import { Reducer } from 'redux';
-import { ExampleState, ExampleTypes } from './types';
+import { IExampleState, IExampleTypes } from './types';
 
-const INITIAL_STATE: ExampleState = {
+const INITIAL_STATE: IExampleState = {
   example: '',
   loading: false,
   error: false,
 };
 
-const reducer: Reducer<ExampleState> = (state = INITIAL_STATE, action) => {
+const reducer: Reducer<IExampleState> = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case ExampleTypes.GET_EXAMPLE:
+    case IExampleTypes.GET_EXAMPLE:
       return { ...state, loading: true };
-    case ExampleTypes.SET_EXAMPLE:
+    case IExampleTypes.SET_EXAMPLE:
       return {
         ...state,
         loading: false,
         error: false,
         example: action.payload.example,
       };
-    case ExampleTypes.GET_EXAMPLE_FAILURE:
+    case IExampleTypes.GET_EXAMPLE_FAILURE:
       return {
         ...state,
         loading: false,
         error: true,
         data: INITIAL_STATE.example,
       };
-    case ExampleTypes.EXAMPLE_CLEAN:
+    case IExampleTypes.EXAMPLE_CLEAN:
       return {
         ...state,
         ...INITIAL_STATE,
       };
-    case ExampleTypes.CLEAN_ALL:
+    case IExampleTypes.CLEAN_ALL:
       return {
         ...state,
         ...INITIAL_STATE,
