@@ -6,7 +6,7 @@ import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { TransactionsList, TransactionForm } from '../../components';
 
-import { Constants } from '../../config';
+import { Constants, Colors } from '../../config';
 import { typedUseSelector } from '../../store';
 
 const ExampleScreen: React.FC = () => {
@@ -29,6 +29,7 @@ const ExampleScreen: React.FC = () => {
         </View>
       </SlidingUpPanel>
       <ActionButton
+        buttonColor={Colors.eletric}
         onPress={() => transactionPanelRef.show()}
         position={Constants.CENTER}
       />

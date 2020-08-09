@@ -16,7 +16,7 @@ interface IContainerProps {
 export const Container = styled.View<IContainerProps>`
   align-items: ${({ alignItems }) => alignItems || 'center'};
   background-color: ${({ backgroundColor }) =>
-    backgroundColor || Colors.outerSpace};
+    backgroundColor || Colors.gallery};
   flex: ${({ flex }) => flex || 1};
   flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
   justify-content: ${({ justifyContent }) => justifyContent || 'space-between'};

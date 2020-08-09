@@ -39,28 +39,19 @@ const TransactionForm: React.FC<ITransactionFormProps> = () => {
 
   return (
     <S.Wrapper>
+      <S.PanelStrap />
       <S.Container>
         <S.FilterButton
-          style={{
-            backgroundColor:
-              type === Constants.RECIPE ? Colors.robbinsEdge : Colors.heart,
-          }}
-          mode='contained'
+          mode={type === Constants.RECIPE ? 'contained' : 'outlined'}
           onPress={() => setType(Constants.RECIPE)}>
           {translate('recipe')}
         </S.FilterButton>
-
         <S.FilterButton
-          mode='contained'
-          style={{
-            backgroundColor:
-              type === Constants.EXPENSE ? Colors.robbinsEdge : Colors.heart,
-          }}
+          mode={type === Constants.EXPENSE ? 'contained' : 'outlined'}
           onPress={() => setType(Constants.EXPENSE)}>
           {translate('expense')}
         </S.FilterButton>
       </S.Container>
-
       <S.TextInput
         keyboardType='number-pad'
         label={translate('value')}
@@ -82,7 +73,6 @@ const TransactionForm: React.FC<ITransactionFormProps> = () => {
           />
         )}
       />
-
       <S.TextInput
         label={translate('description')}
         mode='outlined'
@@ -90,7 +80,6 @@ const TransactionForm: React.FC<ITransactionFormProps> = () => {
         selectionColor={Colors.robbinsEdge}
         value={description}
       />
-
       <S.Button
         disabled={disabled}
         mode='contained'

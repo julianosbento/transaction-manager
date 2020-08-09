@@ -11,7 +11,7 @@ interface IButton {
 export const TransactionContainer = styled.TouchableHighlight`
   background-color: ${Colors.outerSpace};
   border-bottom-color: ${Colors.white};
-  border-bottom-width: 1;
+  border-bottom-width: 3;
   justify-content: center;
   height: ${hp(10)};
 `;

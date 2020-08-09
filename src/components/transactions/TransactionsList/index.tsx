@@ -55,9 +55,7 @@ const TransactionsList: React.FC<ITransactionProps> = () => {
   };
 
   const renderItem = ({ item: { date, description, type, value } }: any) => (
-    <S.TransactionContainer
-      underlayColor={Colors.outerSpace}
-      onPress={() => console.log('You touched me')}>
+    <S.TransactionContainer onPress={() => console.log('You touched me')}>
       <Transaction
         date={date}
         description={description}

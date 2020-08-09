@@ -28,6 +28,15 @@ export const Container = styled.View`
   margin-bottom: ${hp(2)};
 `;
 
+export const PanelStrap = styled.View`
+  align-self: center;
+  background-color: ${Colors.mercury};
+  border-radius: 50;
+  height: ${hp(1)};
+  margin-bottom: ${hp(7)};
+  width: ${wp(15)};
+`;
+
 export const TextInput = styled(TextInputPaper)`
   align-self: center;
   margin-bottom: ${hp(2)};
@@ -37,9 +46,11 @@ export const TextInput = styled(TextInputPaper)`
 export const Wrapper = styled.View`
   align-self: center;
   background-color: ${Colors.gallery};
+  border-top-left-radius: ${hp(3)};
+  border-top-right-radius: ${hp(3)};
   flex: 1;
   height: 100%;
   justify-content: center;
-  padding-bottom: ${hp(40)};
+  padding-bottom: ${hp(47)};
   width: 100%;
 `;

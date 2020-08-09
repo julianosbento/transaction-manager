@@ -2,7 +2,7 @@ import { Colors } from '../../../../config';
 
 export default {
   recipe: {
-    color: Colors.screamin,
+    color: Colors.japaneseLauren,
     name: 'expand-less',
   },
   expense: {

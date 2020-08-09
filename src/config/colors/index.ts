@@ -10,12 +10,14 @@ const blue = {
 
 const gray = {
   gallery: '#F4F4F4',
+  mercury: '#E8E8E8',
+  pumice: '#B8C1B8',
   outerSpace: '#31383C',
   shark: '#1B2124',
 };
 
 const green = {
-  screamin: '#77FF85',
+  japaneseLauren: '#168A00',
 };
 
 const red = {
@@ -23,7 +25,7 @@ const red = {
 };
 
 const purple = {
-  heart: '#4D27B7',
+  eletric: 'rgba(127, 0, 239, 1)',
 };
 
 const Colors = {

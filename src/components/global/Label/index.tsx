@@ -35,7 +35,7 @@ const Label: React.FC<ILabelProps> = ({
 };
 
 Label.defaultProps = {
-  color: Colors.white,
+  color: Colors.black,
   label: '',
   margin: 0,
   fontSize: hp(2),

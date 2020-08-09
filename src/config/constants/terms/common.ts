@@ -1,5 +1,7 @@
 export default {
-  NORMAL: 'normal',
+  CONTAINED: 'contained',
   EXPENSE: 'expense',
+  NORMAL: 'normal',
+  OUTLINED: 'outlined',
   RECIPE: 'recipe',
 };
