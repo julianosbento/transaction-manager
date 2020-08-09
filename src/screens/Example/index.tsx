@@ -4,7 +4,7 @@ import ActionButton from 'react-native-action-button';
 import SlidingUpPanel from 'rn-sliding-up-panel';
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-import { TransactionsList, TransactionForm } from '../../components';
+import { TransactionsList, TransactionForm, Balance } from '../../components';
 
 import { Constants, Colors } from '../../config';
 import { typedUseSelector } from '../../store';
@@ -20,6 +20,7 @@ const ExampleScreen: React.FC = () => {
 
   return (
     <>
+      <Balance />
       <TransactionsList />
       <SlidingUpPanel
         draggableRange={{ top: hp(60), bottom: 0 }}

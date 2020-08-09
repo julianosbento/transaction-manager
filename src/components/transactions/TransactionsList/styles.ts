@@ -17,18 +17,16 @@ export const TransactionContainer = styled.TouchableHighlight`
 `;
 
 export const Button = styled.TouchableOpacity<IButton>`
-  align-items: center;
-  background-color: ${({ backgroundColor }) =>
-    backgroundColor || Colors.robbinsEdge};
-  bottom: 10;
-  justify-content: center;
-  position: ${Constants.ABSOLUTE};
-  right: ${({ right }) => right || 75};
-  top: 0;
-  width: 75;
+  align-items: flex-end;
+  background-color: ${Colors.monza};
+  padding-bottom: ${hp(5)};
+  padding-right: ${hp(2)};
+  padding-top: ${hp(3.5)};
+  width: 100%;
 `;
 
 export const Wrapper = styled.View`
   flex-direction: row;
+  justify-content: flex-end;
   padding-left: ${hp(2)};
 `;

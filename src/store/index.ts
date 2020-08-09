@@ -9,10 +9,12 @@ import rootSaga from './ducks/rootSaga';
 
 import { IExampleState } from './ducks/example/types';
 import { ITransactionsState } from './ducks/transactions/types';
+import { IVisibilityState } from './ducks/visibility/types';
 
 export interface ApplicationState {
   example: IExampleState;
   transactions: ITransactionsState;
+  visibility: IVisibilityState;
 }
 
 const persistConfig = {

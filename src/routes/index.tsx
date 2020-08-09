@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import ExampleScreen from '../screens/Example';
+import { Logo } from '../components';
 
 const Stack = createStackNavigator();
 
@@ -11,7 +12,11 @@ const Routes: React.FC = () => {
     <>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name='Example' component={ExampleScreen} />
+          <Stack.Screen
+            name='Example'
+            component={ExampleScreen}
+            options={{ headerShown: false }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>

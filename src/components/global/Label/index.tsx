@@ -4,11 +4,13 @@ import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Colors, Constants } from '../../../config';
 
 import * as S from './styles';
+import { secureCurrency } from '../../../utils';
 
 export interface ILabelStyleProps {
   color?: string | undefined;
   fontSize?: string | number | undefined;
   fontWeight?: string | number | undefined;
+  secure?: boolean;
   margin?: string | number | undefined;
 }
 
@@ -20,6 +22,7 @@ const Label: React.FC<ILabelProps> = ({
   color,
   fontSize,
   fontWeight,
+  secure,
   label,
   margin,
 }) => {
@@ -29,13 +32,14 @@ const Label: React.FC<ILabelProps> = ({
       fontSize={fontSize}
       fontWeight={fontWeight}
       margin={margin}>
-      {label}
+      {secure ? secureCurrency(label.toString()) : label}
     </S.Label>
   );
 };
 
 Label.defaultProps = {
   color: Colors.black,
+  secure: false,
   label: '',
   margin: 0,
   fontSize: hp(2),

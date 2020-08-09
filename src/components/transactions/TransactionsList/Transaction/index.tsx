@@ -9,6 +9,7 @@ import dataMap from './dataMap';
 import * as S from './styles';
 import { Label } from '../../..';
 import { getTimeTimeFormat } from '../../../../utils';
+import { typedUseSelector } from '../../../../store';
 
 interface ITransactionProps {
   date: string;
@@ -24,13 +25,19 @@ const Transaction: React.FC<ITransactionProps> = ({
   value,
 }) => {
   const { color, name } = dataMap[type];
+  const { visibility } = typedUseSelector((state) => state.visibility);
   return (
     <S.Container
       flexDirection={Constants.ROW}
       justifyContent={Constants.FLEX_START}>
       <MaterialIcons color={color} name={name} size={hp(4)} />
       <S.Container alignItems={Constants.FLEX_START}>
-        <Label label={value} fontSize={hp(2.5)} fontWeight={500} />
+        <Label
+          fontSize={hp(2.5)}
+          fontWeight={500}
+          label={value}
+          secure={visibility}
+        />
         <Label label={description} />
       </S.Container>
       <Label label={getTimeTimeFormat(date)} />
