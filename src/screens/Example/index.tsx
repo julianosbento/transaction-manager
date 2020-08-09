@@ -4,7 +4,12 @@ import ActionButton from 'react-native-action-button';
 import SlidingUpPanel from 'rn-sliding-up-panel';
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-import { TransactionsList, TransactionForm, Balance } from '../../components';
+import {
+  TransactionsList,
+  TransactionForm,
+  Balance,
+  Snackbar,
+} from '../../components';
 
 import { Constants, Colors } from '../../config';
 import { typedUseSelector } from '../../store';
@@ -34,6 +39,7 @@ const ExampleScreen: React.FC = () => {
         onPress={() => transactionPanelRef.show()}
         position={Constants.CENTER}
       />
+      <Snackbar />
     </>
   );
 };

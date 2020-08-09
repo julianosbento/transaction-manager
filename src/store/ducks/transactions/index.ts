@@ -26,6 +26,13 @@ const reducer: Reducer<ITransactionsState> = (
         error: false,
         transactions: action.payload.transactions,
       };
+    case ITransactionsTypes.SET_TRANSACTIONS_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: false,
+        transactions: INITIAL_STATE.transactions,
+      };
 
     case ITransactionsTypes.TRANSACTIONS_CLEAN:
       return {

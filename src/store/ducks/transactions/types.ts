@@ -1,6 +1,7 @@
 export enum ITransactionsTypes {
   GET_TRANSACTIONS = '@transactions/GET_TRANSACTIONS',
   SET_TRANSACTIONS = '@transactions/SET_TRANSACTIONS',
+  SET_TRANSACTIONS_FAILURE = '@transactions/SET_TRANSACTIONS_FAILURE',
   SET_BALANCE = '@transactions/SET_BALANCE',
   CREATE_TRANSACTION = '@transactions/CREATE_TRANSACTION',
   DELETE_TRANSACTION = '@transactions/DELETE_TRANSACTION',

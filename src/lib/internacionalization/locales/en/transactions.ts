@@ -4,4 +4,5 @@ export default {
   currency_symbol: '$',
   expense: 'Expense',
   recipe: 'Recipe',
+  transaction_failed: 'Transaction failed',
 };

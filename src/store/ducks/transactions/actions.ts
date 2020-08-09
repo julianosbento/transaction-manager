@@ -13,6 +13,9 @@ export const deleteTransaction = (transaction: ITransaction) =>
 export const setTransactions = (transactions: ITransaction[]) =>
   action(ITransactionsTypes.SET_TRANSACTIONS, { transactions });
 
+export const setTransactionsFailure = () =>
+  action(ITransactionsTypes.SET_TRANSACTIONS_FAILURE);
+
 export const setBalance = (balance: string | number) =>
   action(ITransactionsTypes.SET_BALANCE, { balance });
 

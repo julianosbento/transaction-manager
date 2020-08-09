@@ -7,6 +7,8 @@ import { transactionsSelector } from '../selectors';
 import { ITransaction } from './types';
 import { Constants } from '../../../config';
 import { parseFloatCurrency } from '../../../utils';
+import { showSnackbar } from '../snackbar/actions';
+import { translate } from '../../../lib';
 
 export function* createTransaction(action: any) {
   try {
@@ -19,7 +21,7 @@ export function* createTransaction(action: any) {
 
     yield call(setTransactionsAndBalance, updatedTransactions);
   } catch (err) {
-    console.log('err => ', err);
+    yield call(transactionFailed);
   }
 }
 
@@ -35,18 +37,37 @@ export function* deleteTransaction(action: any) {
     );
 
     yield call(setTransactionsAndBalance, updatedTransactions);
-  } catch (err) {}
+  } catch (err) {
+    yield call(transactionFailed);
+  }
 }
 
 export function* setTransactionsAndBalance(transactions: ITransaction[]) {
-  const sortedTransactions = sortBy(transactions, ({ date }) => date).reverse();
+  try {
+    const sortedTransactions = sortBy(
+      transactions,
+      ({ date }) => date
+    ).reverse();
 
-  const balance = getBalance(sortedTransactions);
+    const balance = getBalance(sortedTransactions);
 
-  yield all([
-    put(setBalance(balance)),
-    put(setTransactions(sortedTransactions)),
-  ]);
+    yield all([
+      put(setBalance(balance)),
+      put(setTransactions(sortedTransactions)),
+    ]);
+  } catch (err) {
+    yield call(transactionFailed);
+  }
+}
+
+export function* transactionFailed() {
+  yield put(
+    showSnackbar({
+      duration: 7000,
+      message: translate('transaction_failed'),
+      visible: true,
+    })
+  );
 }
 
 export const getBalance = (transactions: ITransaction[]) => {

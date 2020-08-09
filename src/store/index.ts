@@ -8,11 +8,13 @@ import rootReducer from './ducks/rootReducer';
 import rootSaga from './ducks/rootSaga';
 
 import { IExampleState } from './ducks/example/types';
+import { ISnackbarState } from './ducks/snackbar/types';
 import { ITransactionsState } from './ducks/transactions/types';
 import { IVisibilityState } from './ducks/visibility/types';
 
 export interface ApplicationState {
   example: IExampleState;
+  snackbar: ISnackbarState;
   transactions: ITransactionsState;
   visibility: IVisibilityState;
 }
