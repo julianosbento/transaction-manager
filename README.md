@@ -1,10 +1,10 @@
-# Transaction Manager
+# Transactions Manager
 
 
 ![](preview.gif)
 # Requesites
 
-- [node 12.13.0 or higher](https://nodejs.org/dist/v10.15.3/) [we indicate the you use [nvm](https://github.com/nvm-sh/nvm)]
+- [node 12.13.0 or higher](https://nodejs.org/dist/v10.15.3/) [is indicate to use [nvm](https://github.com/nvm-sh/nvm)]
 - [Open JDK 8](https://openjdk.java.net/install/)
 - [react-native-cli or expo-cli](https://facebook.github.io/react-native/docs/getting-started)
 
@@ -19,24 +19,13 @@ Recommended use a linux SO distribution to develop
 ```bash
 git clone git@github.com:julianosbento/transaction-manager.git && cd transaction-manager
 ```
-
-### 2. Create a file `local.properties` in your project folder `/transaction-manager/android`
-
-```bash
-    # create file
-    touch android/local.properties
-
-    # inside write the line below, change USERNAME with your computer username
-    sdk.dir = /home/USERNAME/Android/Sdk
-```
-
-### 3. Install dependencies:
+### 2. Install dependencies:
 
 ```bash
 npm i || yarn
 ```
 
-### 4. Start the project
+### 3. Start the project
 
 To start the project you will need 2 terminals and a device (you can emulate one in [Android Studio](https://developer.android.com/studio/?gclid=EAIaIQobChMIrKivrfGl5QIVr4VaBR39FQbmEAAYASAAEgK8EPD_BwE))
 
@@ -46,7 +35,7 @@ First run the project
 npm run start || yarn start
 ```
 
-After that run your device. To configure one follow the steps bellow:
+After that, run your device. To configure one follow the steps bellow:
 
 1. Open Android Studio
 2. Click in **Configure** and **SDK Manager**
