@@ -1,7 +1,7 @@
 # Transaction Manager
 
 
-[Imgur](https://i.imgur.com/GWUQWuz.gifv)
+![](preview.gif)
 # Requesites
 
 - [node 12.13.0 or higher](https://nodejs.org/dist/v10.15.3/) [we indicate the you use [nvm](https://github.com/nvm-sh/nvm)]
