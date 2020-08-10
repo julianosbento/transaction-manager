@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { View } from 'react-native';
 import ActionButton from 'react-native-action-button';
 import SlidingUpPanel from 'rn-sliding-up-panel';
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -11,6 +10,7 @@ import {
   Snackbar,
 } from '../../components';
 
+import * as S from './styles';
 import { Constants, Colors } from '../../config';
 import { typedUseSelector } from '../../store';
 
@@ -37,9 +37,9 @@ const TransactionsScreen: React.FC = () => {
         onBottomReached={() => setShowFAB(true)}
         draggableRange={{ top: hp(60), bottom: 0 }}
         ref={(panelRef) => (transactionPanelRef = panelRef)}>
-        <View style={{ alignItems: 'flex-start', flex: 1 }}>
+        <S.Container>
           <TransactionForm />
-        </View>
+        </S.Container>
       </SlidingUpPanel>
       {showFAB ? (
         <ActionButton
