@@ -1,7 +1,7 @@
 # Transactions Manager
 
+<img src="src/assets/img/preview.gif" alt="drawing" width="200"/>
 
-![](preview.gif)
 # Requesites
 
 - [node 12.13.0 or higher](https://nodejs.org/dist/v10.15.3/) [is indicate to use [nvm](https://github.com/nvm-sh/nvm)]
@@ -19,6 +19,7 @@ Recommended use a linux SO distribution to develop
 ```bash
 git clone git@github.com:julianosbento/transaction-manager.git && cd transaction-manager
 ```
+
 ### 2. Install dependencies:
 
 ```bash
