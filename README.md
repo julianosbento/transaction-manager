@@ -16,8 +16,16 @@ Recommended use a linux SO distribution to develop
 
 ### 1. Clone and cd into the repo:
 
+By SSH Key
+
 ```bash
 git clone git@github.com:julianosbento/transaction-manager.git && cd transaction-manager
+```
+
+By HTTPS
+
+```bash
+git clone https://github.com/julianosbento/transaction-manager.git && cd transaction-manager
 ```
 
 ### 2. Install dependencies:
@@ -28,7 +36,7 @@ npm i || yarn
 
 ### 3. Start the project
 
-To start the project you will need 2 terminals and a device (you can emulate at [Android Studio](https://developer.android.com/studio/?gclid=EAIaIQobChMIrKivrfGl5QIVr4VaBR39FQbmEAAYASAAEgK8EPD_BwE) ONLY ANDROID)
+To start the project you will need 2 terminals and a device (you can emulate at [Android Studio](https://developer.android.com/studio/?gclid=EAIaIQobChMIrKivrfGl5QIVr4VaBR39FQbmEAAYASAAEgK8EPD_BwE) ANDROID ONLY)
 
 ```bash
 npm run start || yarn start
@@ -86,7 +94,7 @@ Sometimes some errors happens .... here are some solutions we have found:
 
 - Run command `bash shell/bug.sh` and try again
 
-# Deploy (only Android)
+# Deploy (ANDROID ONLY)
 
 In a terminal, run the following commands
 
