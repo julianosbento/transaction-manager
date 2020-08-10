@@ -170,11 +170,12 @@ npm test or yarn test __test__/store/ducks/*.js
   | -- components
     | -- general
     | -- global
-    | -- some sub module components
+    | -- some components sub module
   | -- config
   | -- lib
   | -- routes
   | -- screens
+  | -- shell
   | -- services
   | -- store
     | -- ducks
