@@ -99,7 +99,7 @@ Sometimes some errors happens .... here are some solutions we have found:
 In a terminal, run the following commands
 
 ```
-$ (cd android/ && ./gradlew bundleRelease)
+$ npm run android:bundle || yarn android:bundle
 ```
 
 This will generate an app bundle called `app-release.aab` inside `android/app/build/outputs/bundle/release`
@@ -111,7 +111,7 @@ Take this file and upload it on the Play Store release that you want to rollout
 To generate a new release, at the root folder of the project, run this command
 
 ```
-(cd android/ && ./gradlew installRelease)
+$ npm run android:release || yarn android:release
 ```
 
 This will generate an app bundle called `app-release.apk` inside `android/app/build/outputs/apk/release`

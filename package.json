@@ -2,6 +2,8 @@
   "main": "index.js",
   "scripts": {
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "android:bundle": "(cd android/ && ./gradlew bundleRelease)",
+    "android:release": "(cd android/ && ./gradlew installRelease)",
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
     "web": "node node_modules/expo/local-cli/cli.js start --web",
     "start": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
