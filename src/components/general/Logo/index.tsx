@@ -17,7 +17,12 @@ const Logo: React.FC<ILogoProps> = ({ size }) => {
         name='expand-less'
         size={size}
         color={Colors.eletric}
-        style={{ margin: hp(2), top: 0.1, position: 'absolute' }}
+        style={{
+          marginLeft: hp(3),
+          marginTop: hp(1.2),
+          top: 0.1,
+          position: 'absolute',
+        }}
       />
       <MaterialIcons name='expand-more' size={size} color={Colors.eletric} />
     </S.Wrapper>

@@ -4,9 +4,9 @@
 
 # Requesites
 
-- [node 12.13.0 or higher](https://nodejs.org/dist/v10.15.3/) [is indicate to use [nvm](https://github.com/nvm-sh/nvm)]
+- [node 12.13.0 or higher](https://nodejs.org/dist/v10.15.3/) [is indicated to use [nvm](https://github.com/nvm-sh/nvm) or [fnm](https://github.com/Schniz/fnm)]
 - [Open JDK 8](https://openjdk.java.net/install/)
-- [react-native-cli or expo-cli](https://facebook.github.io/react-native/docs/getting-started)
+- [react-native-cli](https://facebook.github.io/react-native/docs/getting-started) or [expo-cli](https://docs.expo.io/workflow/expo-cli/)
 
 # Development Workflow
 
@@ -28,13 +28,13 @@ npm i || yarn
 
 ### 3. Start the project
 
-To start the project you will need 2 terminals and a device (you can emulate one in [Android Studio](https://developer.android.com/studio/?gclid=EAIaIQobChMIrKivrfGl5QIVr4VaBR39FQbmEAAYASAAEgK8EPD_BwE))
-
-First run the project
+To start the project you will need 2 terminals and a device (you can emulate at [Android Studio](https://developer.android.com/studio/?gclid=EAIaIQobChMIrKivrfGl5QIVr4VaBR39FQbmEAAYASAAEgK8EPD_BwE) ONLY ANDROID)
 
 ```bash
 npm run start || yarn start
 ```
+
+#### Android
 
 After that, run your device. To configure one follow the steps bellow:
 
@@ -42,6 +42,7 @@ After that, run your device. To configure one follow the steps bellow:
 2. Click in **Configure** and **SDK Manager**
 3. Firsrt in SDK Plataforms tab select:
    - Android 10.0 (Q)
+   - Android 9.0 (N)
    - Android 8.1 (Oreo)
    - Android 8.0 (Oreo)
    - Android 7.0 (Nougat)
@@ -67,7 +68,11 @@ After your device is running (you need wait until it's finish starting, like whe
 npm run android || yarn android
 ```
 
-### Tips
+#### iOS
+
+Open xCode, select your device and click in build
+
+## Tips
 
 Sometimes some errors happens .... here are some solutions we have found:
 
@@ -81,9 +86,7 @@ Sometimes some errors happens .... here are some solutions we have found:
 
 - Run command `bash shell/bug.sh` and try again
 
-# Deploy
-
-## Android
+# Deploy (only Android)
 
 In a terminal, run the following commands
 
@@ -95,7 +98,7 @@ This will generate an app bundle called `app-release.aab` inside `android/app/bu
 
 Take this file and upload it on the Play Store release that you want to rollout
 
-# Generating a new apk release
+## Generating a new apk release
 
 To generate a new release, at the root folder of the project, run this command
 
